@@ -1,2 +1,4 @@
-# web-330
-A repository for WEB330-346A Enterprise JavaScript II
+# WEB 330 Enterprise JavaScript II
+## Contributors
+* Professor Richard Krasso
+* Laura Kendl
