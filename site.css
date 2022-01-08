@@ -13,10 +13,13 @@
  */
 .app-header {
     text-align: center;
-    font-size: 28px;
+    font-weight: 400;
+    border: none;
+    color: inherit;
+    background-color: inherit;
 }
 
-.return-home:link {
+.return-home {
     color: #4F3674;
     text-decoration: none;
 }
@@ -47,7 +50,7 @@
     Styles added per the instructions in Assign_1.
  */
 
- #icon-mode:hover {
+#icon-mode:hover {
     cursor: pointer;
 }
 
