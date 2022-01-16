@@ -19,18 +19,18 @@
     background-color: inherit;
 }
 
-.return-home {
-    color: var(--anchor-color);
+.return-home:link {
+    color: #4F3674;
     text-decoration: none;
 }
 
 .return-home:hover {
-    background-color: var(--anchor-background-color);
-    color: var(--anchor-color);
+    background-color: #D6A800;
+    color: #4F3674;
 } 
 
 .return-home:visited {
-    color: var(--anchor-color-visited);
+    color: #3C275A;
 }
 
 .form {
