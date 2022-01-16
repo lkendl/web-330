@@ -1,0 +1,157 @@
+<!--
+============================================
+; Title: Assignment 2.2
+; Author: Professor Krasso 
+; Date: 12 January 2022
+; Modified By: Laura Kendl
+; Description: This program demonstrates 
+; how to use JavaScript strings and functions to 
+; create a Palindrome application.
+; Resources: 
+; W3schools: https://www.w3schools.com/jsref/jsref_tolocalestring.asp (JavaScript Date toLocaleString())
+; W3schools: https://www.w3schools.com/jsref/jsref_return.asp (JavaScript return)
+; W3schools: https://www.w3schools.com/jsref/jsref_split.asp (JavaScript String split())
+; Tutorialrepublic: https://www.tutorialrepublic.com/faq/how-to-split-a-string-into-an-array-of-characters-in-javascript.php (How to Split a String into an Array of Characters in JavaScript)
+; W3schools: https://www.w3schools.com/jsref/jsref_if.asp#:~:text=The%20if%2Felse%20statement%20executes,actions%20based%20on%20different%20conditions. (JavaScript if...else)
+; W3schools: https://www.w3schools.com/js/js_strings.asp (JavaScript Strings)
+; Mozilla: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Strings (Handling text - strings in Javascript)
+;===========================================
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>WEB 330 - Enterprise JavaScript II</title>
+
+        <!-- Link to External Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="../theme.css">
+        <link rel="stylesheet" type="text/css" href="../site.css">
+        <script src="../theme.js"></script>
+
+        <!-- Google Font Kit for Oswald -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    </head>
+
+<body class="light-theme">
+
+    <div class="assign-container">
+        <h1 class="app-header">Welcome to the Palindrome App!</h1>
+               
+        <div class="assign-content">
+                <div class="card">
+                    <div class="card-title">Palindrome Checker</div>
+                    <div class="card-content">
+                        <div class="form">
+                            <div class="form-field">
+                                <label for="txtPhrase">Phrase value:</label>
+                                <input type="text" id="txtPhrase" name="phrase" class="input">
+                            </div>
+                           
+                        <div class="form-field">
+                            <!--Register onclick event-->
+                            <button id="btnCheckPhrase" onclick="function checkPhrase()" class="btn btn-primary full-width" type="submit">Check Phrase</button>
+                        </div>
+                    </div>
+                </div>       
+            </div>
+                <p>
+                    <a href="../index.html" class="return-home">Return</a>
+                </p>
+        </div>
+    </div>
+             
+        <div class="assign-container">
+            <div class="assign-content"> 
+                <div class="card">
+                    <div class="card-title">Palindrome Results</div>
+                    <div class="card-content">
+                        <div id="assign-results-header"></div>
+                        <div id="assign-results" class="assign-results-text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- Internal JS -->
+
+    <script>
+
+//A function that returns a new JavaScript date.
+function getTodaysDate() {
+    return new Date().toLocaleDateString("en-us");
+}
+
+//A function that returns the string's length.
+function getLength(str) {
+   return str.length;
+}
+
+//A function with a single parameter for a string value.
+function reverse(str) {
+//Split the string into a character array.
+    let splitString = str.split(""); //An empty string will convert string to an array of characters.
+//Reverse the string.
+    let reverseString = splitString.reverse();
+//Convert the character array back to a string value.
+    let resultString = reverseString.join("");
+//Return the string.
+    return resultString;
+}
+
+
+//Create a function named isPalindrome() with a single parameter for a string value. 
+function isPalindrome(str) {
+//Call the reverse() function and return true if the results from the reverse() function call equal the string parameter. 
+    if(reverse(str) === str) {
+        return true;
+    }
+//If they do not match, return false.
+    else {
+        return false;
+    }
+}
+
+//Onclick event that executes checkPhrase function when user clicks btnCheckPhrase.
+document.getElementById("btnCheckPhrase").onclick = function checkPhrase() {
+
+//Capture the inputted phrase and assign it to a variable.
+let txtPhrase = document.getElementById("txtPhrase").value;
+//Assign the “assign-results” div to a variable named assignResults.
+let assignResults = document.getElementById("assign-results");
+//Create a variable named today and assign it the results from the getTodaysDate() function call.
+let today = getTodaysDate();
+//A variable that gets the length of the txtPhrase string.
+let len = getLength(txtPhrase); // ?????????
+//A variable that reverses the txtPhrase string.
+let reversedPhrase = reverse(txtPhrase); // ??????????????
+//A string variable that builds a string of variables: today, txtPhrase, reversedPhrase, and len.
+let header = 
+"Date: " + today + 
+"<br>Original Phrase: " + txtPhrase +
+"<br>Reversed Phrase: " + reversedPhrase +
+"<br>Phrase Length: " + len;
+   
+//Display header string to assign-results-header DIV.
+document.getElementById("assign-results-header").innerHTML = header;
+
+//A variable of the Palindrome result.
+let palindromeResult = isPalindrome(txtPhrase.toLowerCase());
+//if...else statement to call the isPalindrome() function by passing-in the txtPhrase variable.
+    if(palindromeResult === true) {
+        document.getElementById("assign-results").innerHTML = txtPhrase + " <b><u>is</u></b> a palindrome!";
+    }
+    else {
+        document.getElementById("assign-results").innerHTML = txtPhrase + " <b><u>is not</u></b> a palindrome!";
+    }
+};
+   
+       </script>
+
+    </body>
+
+</html>
