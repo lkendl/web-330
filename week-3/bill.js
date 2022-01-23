@@ -52,7 +52,7 @@ getTotal() {
         total += parseFloat(mainCourse.price);
     });
 
-    this._desserts.forEach(function(mainCourse) {
+    this._desserts.forEach(function(dessert) {
         total += parseFloat(dessert.price);
     });
 
