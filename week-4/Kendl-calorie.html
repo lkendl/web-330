@@ -101,10 +101,10 @@ document.getElementById("btnSearch").onclick = function() {
     // Create table data with HTML table string.
     let tableData = `
         <table>
-            <thead>
+            <tr>
                 <th>Name</th>
                 <th>Calories</th>
-            </thead>
+            </tr>
     `;
 
         //For...of loop to iterate over foods variable to populate HTML table.
@@ -133,13 +133,11 @@ txtFoodItemEl.addEventListener('keyup', function (event) {
 // Call static data field off of the CalorieConverter class with variable FoodList.
 let foodList = CalorieConverter.data;
 
-// 
-let foodListData = `
-    <i>(Ex:
-    `;
-    for (let name of foodList) {
+let foodListData = `<i>(Ex: `;
+
+for (let name of foodList) {
         foodListData += `${food.name}, `;
-    }
+}
 
     document.getElementById("foodList").innerHTML = foodListData.slice(0, -2) + `)</i>`;
 
