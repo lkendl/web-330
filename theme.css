@@ -30,6 +30,14 @@
     --btn-hover-background-color: #D6A800;
     --btn-hover-color: #4F3674;
     --input-border-color: #CCC;
+    /** 
+     Added for Assignment 4.2
+    */
+     --table-header-background-color: #4F3674;
+     --table-header-color: #FFF;
+     --table-border-color: #DDD;
+     --table-hover-background-color: #D6A800;
+     --table-hover-color: #4F3674;
 }
 
 body.dark-theme {
@@ -50,6 +58,14 @@ body.dark-theme {
     --btn-hover-background-color: #7D4787;
     --btn-hover-color: #FFF;
     --input-border-color: #303030;
+    /** 
+     Added for Assignment 4.2
+    */
+    --table-header-background-color: #D176E1;
+    --table-header-color: #FFF;
+    --table-border-color: #303030;
+    --table-hover-background-color: #7D4787;
+    --table-hover-color: #FFF;
 }
 
 body {
@@ -166,4 +182,31 @@ h2, h3, h4 {
     border: 1px solid var(--input-border-color);
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+/** 
+ Added for Assignment 4.2
+*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--table-header-background-color);
+    color: var(--table-header-color);
+}
+
+th, td {
+    border: 1px solid var(--table-border-color);
+}
+
+tr:hover {
+    background: var(--table-hover-background-color);
+    color: var(--table-hover-color);
+    cursor: pointer;
 }
