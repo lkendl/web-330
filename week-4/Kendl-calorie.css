@@ -1,0 +1,18 @@
+/*
+============================================
+; Title: Kendl-calorie.css
+; Author: Professor Krasso 
+; Date: 27 January 2022
+; Modified By: Laura Kendl
+; Description: CSS for Assignment 4 .2 - Calorie App.
+; Resources: 
+; 
+===========================================
+*/
+
+ #foodList {
+    float: right;
+    color: #DF546A;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
