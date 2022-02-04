@@ -1,0 +1,182 @@
+<!--
+============================================
+; Title: Assignment 5.2
+; File Name: Kendl-bobs-auto-repair.html
+; Author: Professor Krasso 
+; Date: 31 January 2022
+; Modified By: Laura Kendl
+; Description: This application demonstrates JavaScript iterators 
+; by building a shopping cart website.
+; Resources: 
+; [Ref A] W3schools: https://www.w3schools.com/tags/tag_select.asp (HTML <select> tag)
+; [Ref B] W3schools: https://www.w3schools.com/js/js_function_call.asp (All Functions are Methods)
+; [Ref C] W3schools: https://www.w3schools.com/js/js_if_else.asp (JavaScript if else and else if)
+; [Ref D] W3schools: https://www.w3schools.com/js/js_comparisons.asp (Comparison Operators)
+; [Ref E] W3schools: https://www.w3schools.com/jsref/met_win_alert.asp (Window alert())
+; [Ref F] W3schools: https://www.w3schools.com/jsref/prop_select_value.asp (Select value Property)
+;===========================================
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>WEB 330 - Enterprise JavaScript II</title>
+
+        <!-- Link to External Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="../theme.css">
+        <link rel="stylesheet" type="text/css" href="../site.css">
+        <link rel="stylesheet" type="text/css" href="Kendl-bobs-auto-repair.css">
+
+        <!-- Link to External Scripts -->
+        <script src="../theme.js"></script>
+        <script src="cart-component.js"></script>
+
+        <!-- Google Font Kit for Oswald -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    </head>
+
+<body class="light-theme">
+
+    <div class="assign-container">
+        <h1 class="app-header">Welcome to Bob's Automotive Repair Shop!</h1>
+               
+        <div class="assign-content">
+
+                <div class="card">
+                    <div class="card-title">Product Listing
+                        <br />
+                        <cart-component></cart-component>
+                    </div>
+                    <br />
+                  
+                    <div class="card-content">
+                        <div class="form">
+                            <div class="form-field">
+
+                                <label for="txtChooseProduct">Choose a product:</label>
+                                <!-- [Ref A] -->
+                                <select name="productList" id="productList" class="drop-down-menu">
+                                    <option value="select">--Select--</option>
+                                    <option value="19.99">Oil Change</option>
+                                    <option value="18.44">Filter Replacement</option>
+                                    <option value="9.99">Wiper Fluid Refill</option>
+                                </select>
+                                <br />
+                                <i id="cart-message">To view your shopping cart click on the cart icon</i>
+                            </div>
+
+                        <div class="form-field">
+                            <!--Register onclick event-->
+                            <button id="btnAddProduct" class="btn btn-primary full-width">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>       
+            </div>
+                <p>
+                    <a href="../index.html" class="return-home">Return</a>
+                </p>
+        </div>
+    </div>
+             
+    <div class="assign-container">
+        <div class="assign-content"> 
+            <div class="card">
+                <div class="card-title">Shopping Cart</div>
+                <div class="card-content" id="shoppingCart">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<!-- Internal JS -->
+
+<script type="module">
+
+// Set user-selected theme.
+setSelectedTheme();
+
+// Import classes.
+import { Product } from "./product.js";
+import { ShoppingCart } from "./shopping-cart.js";
+
+// Create new ShoppingCart object.
+let shoppingCart = new ShoppingCart();
+
+// Calls setCartCount function.
+setCartCount();
+
+// This function calls the count() function from ShoppingCart object and binds results to the cart-count DIV.
+function setCartCount() {
+    let cartCount = document.getElementById("cart-count")
+    let count = shoppingCart.count();
+    cartCount.innerHTML = count;
+}
+
+// ON-CLICK EVENT START | "btnAddProduct"
+// This function activates when user clicks btnAddProduct.
+document.getElementById("btnAddProduct").onclick = function() {
+
+    // Assign productList DIV to a variable.
+    let productList = document.getElementById("productList");
+
+    // Assign variable to productList text.
+    let product = productList.options[productList.selectedIndex].text;
+
+    // Assign variable to productList values.
+    let productValue = productList.options[productList.selectedIndex].value;
+
+    // If Statement | Compares the product variable against the string value [Ref C & D].
+    if (productValue !== "select") {
+
+        shoppingCart.add(new Product(product, productValue));
+        
+        alert(`${product} was added to your shopping cart!`); // [Ref E]
+        
+        // Set productList value to "select" [Ref].
+        document.getElementById("productList").value = "select";
+    }
+    // Call setCartCount function.
+    setCartCount();
+};
+// ON-CLICK EVENT END | "btnAddProduct"
+
+// ON-CLICK EVENT START | "cartIcon" (imported from cart-component.js)
+// This function activates when user clicks the cartIcon element.
+document.getElementById("cartIcon").onclick = function() {
+    
+    // Assign string value of HTML table header to a variable.
+    let cartDisplayTable = `
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>  
+            </tr> 
+    `;
+
+    // For... Of Statement | Iterate over ShoppingCart object with Iterator from shopping-cart.js file.
+    for (let product of shoppingCart) {
+        cartDisplayTable += `
+            <tr>    
+                <td>${product.id}</td>
+                <td>${product.name}</td>
+                <td>${product.price}</td> 
+            </tr>
+            `;
+        }
+    // Binds cartDisplayTable to shoppingCart DIV and closes HTML string table.
+    document.getElementById("shoppingCart").innerHTML = cartDisplayTable + `</table>`;
+};
+// ON-CLICK EVENT END | "cartIcon"
+
+       </script>
+    </body>
+</html>

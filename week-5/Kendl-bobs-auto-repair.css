@@ -1,0 +1,23 @@
+/*
+============================================
+; Title: Assignment 5.2
+; File Name: Kendl-bobs-auto-repair.css
+; Author: Professor Krasso 
+; Date: 31 January 2022
+; Modified By: Laura Kendl
+; Description: CSS for Bob's Automotive Repair Shop.
+; Resources: 
+;
+===========================================
+*/
+
+ #cart-message {
+    float: right;
+    color: #DF546A;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+i:hover {
+    cursor: pointer;
+}
