@@ -20,17 +20,17 @@
 }
 
 .return-home:link {
-    color: #4F3674;
+    color: var(--anchor-color);
     text-decoration: none;
 }
 
 .return-home:hover {
-    background-color: #D6A800;
-    color: #4F3674;
+    background-color: var(--anchor-color-hover);
+    color: var(--anchor-color);
 } 
 
 .return-home:visited {
-    color: #3C275A;
+    color: var(--anchor-color-visited);
 }
 
 .form {
