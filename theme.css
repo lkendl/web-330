@@ -38,6 +38,12 @@
      --table-border-color: #DDD;
      --table-hover-background-color: #D6A800;
      --table-hover-color: #4F3674;
+    /** 
+     Added for Return Link in Assignments
+    */
+    --anchor-color-visited: #3C275A;
+    --anchor-color-hover: #D6A800;
+
 }
 
 body.dark-theme {
@@ -66,6 +72,12 @@ body.dark-theme {
     --table-border-color: #303030;
     --table-hover-background-color: #7D4787;
     --table-hover-color: #FFF;
+
+     /** 
+     Added for Return Link in Assignments
+    */
+    --anchor-color-visited: #FFF;
+    --anchor-color-hover: #D176E1;
 }
 
 body {
