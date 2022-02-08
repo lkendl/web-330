@@ -1,0 +1,14 @@
+/*
+============================================
+; Title: 500-width-max.css
+; Author: Professor Krasso 
+; Date: 5 February 2022
+; Modified By: Laura Kendl
+; Description: Demonstrates how to create CSS variables for website themes.
+;===========================================
+*/
+
+.body-container {
+    width: 100%;
+    margin: auto auto;
+}
