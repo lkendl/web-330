@@ -98,44 +98,104 @@ body.soft-theme {
 
 }
 
-body.blue-theme {
-    --text-color: #22337C; /* Warm */
+body.bright-theme {
+    --text-color: #000;
     --background-color: #FFF;
+    --anchor-color: #EE4929;
 
-    --anchor-color: #3E73A1;
-    --anchor-hover-color: #FFF;
-    --anchor-hover-background-color: #3E73A1; /* Accent */
-    --anchor-color-visited: #5B2530;
-    --anchor-color-hover: #3E73A1;
-
-    --heading-background-color: #3E73A1;
-    --heading-color: #FFF;
-    --heading-border-color: #3E73A1;
-
-    --h1-background-color: #3E73A1;
-    --h1-border-color: #3E73A1;
-  
-    --card-background-color: #FFF;
-    --card-title-color: #3E73A1;
-
-    --btn-background-color: #3E73A1;
-    --btn-color: #FFF;
-    --btn-hover-background-color: #3E73A1;
-    --btn-hover-color: #5B2530;
-    --btn-border-color: #3E73A1;
-
-    --input-border-color: #CCC;
-    --table-header-background-color: #5B2530;
-    --table-header-color: #FFF;
-    --table-border-color: #DDD;
-   
-    --header-background-color: #22337C; /* Primary */
+    /* Primary: #E49D3C (magenta)*/
+    --header-background-color: #FE0535; /* Primary */
     --header-color: #FFF;
-    --footer-background-color: #22337C;
+    --footer-background-color: #FE0535;
     --footer-color: #FFF;
 
+    --heading-background-color: #FE0535;
+    --heading-color: #FFF;
+    --heading-border-color: #FE0535;
+
+    --h1-background-color: #FE0535;
+    --h1-border-color: #FE0535;
+  
+    --btn-background-color: #FE0535;
+    --btn-color: #FFF;
+    --btn-hover-color: #FFF;
+    --btn-border-color: #FE0535;
+
     --nav-background-color: #FFF;
-    --nav-link-color: #22337C;
+    --nav-link-color: #FE0535;
+    --nav-link-color-1: #FE0535;
+    --nav-link-color-2: #FE0535;
+    --nav-link-color-3: #FE0535;
+    --nav-link-color-4: #FE0535;
+
+    /* Warm: #EC008B (hot pink) */
+
+    /* Accent #1: #BF1F49 (orange) */
+    --anchor-hover-background-color: #EE4929;
+    --anchor-hover-color: #FFF;
+    --anchor-color-hover: #EE4929;
+    --btn-hover-background-color: #EE4929;
+
+    /* Accent #2: #4DB6AC (light blue) */
+     
+    --card-background-color: #FFF;
+    --card-title-color: #4DB6AC;
+   
+    --input-border-color: #CCC;
+    --table-header-background-color: #4DB6AC;
+    --table-header-color: #FFF;
+    --table-border-color: #DDD;
+}
+
+
+body.soft-colorful-theme {
+    --text-color: #000;
+    --background-color: #333;
+    --container-background-color: #FFF;
+    --anchor-color: #000;
+
+    /* Primary: #E49D3C (magenta)*/
+    --header-background-color: #8DA6F2; /* Primary */
+    --header-color: #000;
+    --footer-background-color: #8DA6F2;
+    --footer-color: #000;
+
+    --heading-background-color: #8DA6F2;
+    --heading-color: #000;
+    --heading-border-color: #8DA6F2;
+
+    --h1-background-color: #8DA6F2;
+    --h1-border-color: #8DA6F2;
+  
+    --btn-background-color: #8DA6F2;
+    --btn-color: #FFF;
+    --btn-hover-color: #FFF;
+    --btn-border-color: #8DA6F2;
+
+    --nav-background-color: #FFF;
+    --nav-link-color: #8DA6F2;
+    --nav-link-color-1: #FE0535;
+    --nav-link-color-2: #FE0535;
+    --nav-link-color-3: #FE0535;
+    --nav-link-color-4: #FE0535;
+
+    /* Warm: #EC008B (hot pink) */
+
+    /* Accent #1: #BF1F49 (orange) */
+    --anchor-hover-background-color: #EE4929;
+    --anchor-hover-color: #FFF;
+    --anchor-color-hover: #EE4929;
+    --btn-hover-background-color: #EE4929;
+
+    /* Accent #2: #4DB6AC (light blue) */
+     
+    --card-background-color: #FFF;
+    --card-title-color: #4DB6AC;
+   
+    --input-border-color: #CCC;
+    --table-header-background-color: #4DB6AC;
+    --table-header-color: #FFF;
+    --table-border-color: #DDD;
 }
 
 body {
@@ -152,11 +212,13 @@ body {
     margin-top: 100px;
     margin-left: 100px;
     margin-right: 100px;
+
 }
 
 .main {
     padding-top: 90px;
     padding-bottom: 65px;
+    background-color: var(--container-background-color);
 }
 
 #icon-text {
@@ -181,10 +243,12 @@ a:hover {
     background-color: rgba(255,255,255, 0.8);
     width: 100%;
     display: flex;
-    margin-top: 0px;
+    margin-top: -10px;
+    margin-left: -10px;
     position: fixed;
     padding-top: 50px;
     padding-bottom: 10px;
+    padding-left: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;   
 }
@@ -229,6 +293,10 @@ h2, h3, h4 {
     background: var(--heading-background-color);
     padding: 10px;
     border: solid 1px var(--heading-border-color);
+}
+
+h5 {
+    font-size: 1.2em;
 }
 
 .card {
@@ -373,13 +441,22 @@ footer {
     padding-top: 5px;
 }
 
-.resume-header {
-    font-weight: bold;
+#resume-name-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #resume-download {
     margin-right: auto;
     margin-left: auto;
+}
+
+#resume-name {
+    font-size: 1.5em;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-color: var(--background-color);
+    margin-bottom: -5px;
 }
 
 .grid-container {
