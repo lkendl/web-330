@@ -22,25 +22,25 @@ class navBar extends HTMLElement {
         <nav class="navbar">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link nav-link-1" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">About Laura</a>
+                <a class="nav-link nav-link-2" href="/about">About Laura</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/resume">Resume</a>
+                <a class="nav-link nav-link-3" href="/resume">Resume</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/projects">Projects</a>
+                <a class="nav-link nav-link-4" href="/projects">Projects</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/diagrams">Database Diagrams</a>
+                <a class="nav-link nav-link-1" href="/diagrams">Database Diagrams</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/api-unit-tests">API Unit Tests</a>
+                <a class="nav-link nav-link-2" href="/api-unit-tests">API Unit Tests</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/bucket-list">Bucket List</a>
+                <a class="nav-link nav-link-3" href="/bucket-list">Bucket List</a>
             </li>
         </ul>
     </nav>
