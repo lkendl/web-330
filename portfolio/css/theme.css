@@ -101,7 +101,7 @@ body.soft-theme {
 body.bright-theme {
     --text-color: #000;
     --background-color: #FFF;
-    --anchor-color: #EE4929;
+    --anchor-color: #FE0535;
 
     /* Primary: #E49D3C (magenta)*/
     --header-background-color: #FE0535; /* Primary */
@@ -139,16 +139,16 @@ body.bright-theme {
     /* Accent #2: #4DB6AC (light blue) */
      
     --card-background-color: #FFF;
-    --card-title-color: #4DB6AC;
+    --card-title-color: #FFF;
+    --card-title-background-color: #EE4929;
    
     --input-border-color: #CCC;
-    --table-header-background-color: #4DB6AC;
+    --table-header-background-color: #EE4929;
     --table-header-color: #FFF;
     --table-border-color: #DDD;
 }
 
-
-body.soft-colorful-theme {
+body.soft-color-theme {
     --text-color: #000;
     --background-color: #FFF;
     --container-background-color: #FFF;
@@ -203,6 +203,7 @@ body.soft-colorful-theme {
      
     --card-background-color: #FFF;
     --card-title-color: #4DB6AC;
+    --card-title-background-color: #4DB6AC;
    
     --input-border-color: #CCC;
     --table-header-background-color: #4DB6AC;
@@ -358,8 +359,9 @@ h5 {
 .card-title {
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.75em;
+    font-size: 1.40em;
     color: var(--card-title-color);
+    background-color: var(--card-title-background-color);
     font-weight: 600;
 }
 
