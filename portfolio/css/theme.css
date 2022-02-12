@@ -102,6 +102,7 @@ body.bright-theme {
     --text-color: #000;
     --background-color: #FFF;
     --anchor-color: #FE0535;
+    --container-background-color: #FFF;
 
     /* Primary: #E49D3C (magenta)*/
     --header-background-color: #FE0535; /* Primary */
@@ -141,6 +142,7 @@ body.bright-theme {
     --card-background-color: #FFF;
     --card-title-color: #FFF;
     --card-title-background-color: #EE4929;
+    --card-main-background-color: #ffffff;
    
     --input-border-color: #CCC;
     --table-header-background-color: #EE4929;
@@ -225,14 +227,13 @@ body {
     margin-top: 100px;
     margin-left: 100px;
     margin-right: 100px;
-
 }
 
 .main {
     padding-top: 90px;
     padding-bottom: 65px;
     background-color: var(--container-background-color);
-}
+ }
 
 #icon-text {
     padding-left: 10px;
@@ -354,6 +355,10 @@ h5 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     background: var(--card-background-color);
+}
+
+.main-card {
+    background-color: var(--card-main-background-color);
 }
 
 .card-title {

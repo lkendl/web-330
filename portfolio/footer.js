@@ -33,7 +33,7 @@ class Footer extends HTMLElement {
     
             </div>
     
-        <div id="copyright"><br />&copy; 2020 Kendl </div>
+        <div id="copyright"><br />&copy; 2022 Kendl </div>
     
         </footer>
     </body>
