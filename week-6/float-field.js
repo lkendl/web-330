@@ -1,4 +1,4 @@
-/**
+/*
 ============================================
 ; Title: float-field.js
 ; Author: Professor Krasso 
@@ -19,11 +19,14 @@ export class FloatField {
 
 // This function will return true if it can ParseFloat this.field.
     validate() {
-        return isNaN(parseFloat(this.field));
-    }
+        if (isNaN(this.field)) {
+            return false;
+        }
+            return true;
+        }
 
 // This function will return a string message..
     getMessage() {
-        return "${name} must be a float value. You entered ${field}"; // <name> ?
+        return `${this.name} must be a float value. You entered ${this.field}.`;
     }
 }

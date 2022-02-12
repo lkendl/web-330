@@ -16,46 +16,44 @@ import { FloatMinField } from "./float-min-field.js";
 import { FloatMaxField } from "./float-max-field.js";
 
 // Two class properties with empty arrays [Ref A].
-class Validators {
+export class Validator {
     validators = [];
-}
-
-class Messages {
     messages = [];
-}
 
 // Class constructor with two parameters.
-class {
-    constructor(name, field) {
-
-    }
+constructor(name, field) {
+    this.name = name;
+    this.field = field;
 }
-
+    
 // This function pushes a new instance of the RequiredField class to the validators array using the name and field as parameters.
-addRequiredField(RequiredField) {
-        this.Validators.push(this.name, this.field);
+addRequiredField() {
+    this.validators.push(new RequiredField(this.name, this.field));
 }
 
 // This function pushes a new instance of the FloatField class to the validators array using the name and field as parameters.
-addRequiredFloatField(FloatField) {
-    this.Validators.push(this.name, this.field);
+addRequiredFloatField() {
+    this.validators.push(new FloatField(this.name, this.field));
 }
 
 // This function pushes a new instance of the FloatMinField class to the validators array using the name and field as parameters.
-addFloatMinField(FloatMinField) {
-    this.Validators.push(this.name, this.field, this.min);
+addFloatMinField(min) {
+    this.validators.push(new FloatMinField(this.name, this.field, min));
 }
 
 // This function pushes a new instance of the FloatMaxField class to the validators array using the name and field as parameters.
-addFloatMaxField(FloatMaxField) {
-    this.Validators.push(this.name, this.field, this.max);
+addFloatMaxField(max) {
+    this.validators.push(new FloatMaxField(this.name, this.field, max));
 }
 
-// This function...
+// This function iterates over the validators array with a for...of statement and calls the iterated objects validate function. 
 validate() {
-    // For/Of statement
+    for (let valid of this.validators) {
+        if (!valid.validate()) {
+            this.messages.push(valid.getMessage());
+            return false;
+        }
+    } 
+        return true
+    }
 }
-
-
-
-  

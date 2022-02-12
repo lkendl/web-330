@@ -22,6 +22,6 @@ export class RequiredField {
 
 // This function will return a string message.
     getMessage() {
-        return "${name} is a required field."; // <name> ?
+        return `${this.name} is a required field`; // <name> ?
     }
 }

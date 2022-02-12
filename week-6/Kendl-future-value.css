@@ -5,12 +5,28 @@
 ; Date: 7 February 2022
 ; Modified By: Laura Kendl
 ; Description: CSS for Assignment 6.2 - Future Value App.
+; Resources:
+; [Ref A] W3schools: https://www.w3schools.com/css/css_inline-block.asp (CSS Layout - display: inline-block)
 ;===========================================
 */
 
- #foodList {
+.danger {
     float: right;
     color: #DF546A;
     font-size: 12px;
     letter-spacing: 2px;
 }
+
+.form-label {
+    display: inline-block;
+    padding-top: 1rem;
+}
+
+/** Note [Ref A]:
+
+    Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element.
+
+    Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
+
+    Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
+*/

@@ -8,7 +8,14 @@
 ; complex class types, and more static functions with the Future
 ; Value App.
 ; Resources: 
-;
+; [Ref A] W3schools: https://www.w3schools.com/bootstrap/bootstrap_grid_system.asp (Bootstrap Grid System)
+; [Ref B] MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString (Date.prototype.toLocaleString())
+; [Ref C] W3schools: https://www.w3schools.com/js/js_function_call.asp (JavaScript Function call())
+; [Ref D] Stackoverflow: https://stackoverflow.com/questions/48168601/change-the-value-of-imported-variable-in-es6 (Change the value of imported variable in ES6)
+; [Ref E] Bellevue University: WEB-330 Assignment 6 PDF (Exhibit D. validation example)
+; [Ref F] W3schools: https://www.w3schools.com/jsref/jsref_if.asp (JavaScript if...else)
+; [Ref G] Stackoverflow: https://stackoverflow.com/questions/31732981/if-else-statement-with-two-condition/31733033#:~:text=In%20order%20to%20use%20logical,the%20%26%26%20evaluate%20to%20true. (if else statement with two condition)
+; [Ref H] Stackoverflow: https://stackoverflow.com/questions/22593759/how-do-i-clear-inner-html (How do I clear inner HTML)
 ;===========================================
 -->
 
@@ -33,7 +40,7 @@
         <!-- Link to External JS Sources -->
         <script src="../theme.js"></script>
 
-        <!-- Google Font Kit for Oswald -->
+        <!-- Link to External Font Sources -->
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -42,38 +49,90 @@
 <body class="light-theme">
 
     <div class="assign-container">
-        <h1 class="app-header">Welcome to the Calorie App!</h1>
+
+        <h1 class="app-header">Welcome to the Future Value App!</h1>
                
         <div class="assign-content">
 
-                <div class="card">
-                    <div class="card-title">Calorie Search Form</div>
-                    <div class="card-content">
-                        <div class="form">
-                            <div class="form-field">
-                                <label for="txtFoodItem">Enter a food item:</label>
-                                <input type="text" id="txtFoodItem" name="myFoodItem" class="input">
-                            </div>
-                           <span id="foodList"></span>
-                        <div class="form-field">
-                            <!--Register onclick event-->
-                            <button id="btnSearch" class="btn btn-primary full-width">Search</button>
+            <div class="card">
+                   
+            <div class="card-title">Future Value Calculator</div>
+                   
+                <div class="card-content">
+
+                    <!-- 12-column DIV [Ref A]-->
+
+                    <div id="errorLog" class="row danger col-12"></div>
+       
+                    <div class="form"> 
+
+                    <!-- Monthly Payment -->
+                        <div class="form-field form-label row">
+
+                            <label for="txtMonthlyPayment" class="col-5">Monthly Payment:</label>
+
+                            <input type="text" id="txtMonthlyPayment" name="Monthly Payment" class="input col-7">
+
                         </div>
+                        
+                        <!-- Interest Rate DIV -->
+                        <div class="form-field form-label row">
+
+                            <label for="txtInterestRate" class="col-5">Interest Rate:</label>
+
+                            <input type="text" id="txtYearlyRate" name="Interest Rate" class="input col-7">
+
+                            <br />
+
+                            <span><i class="danger">Enter 11.1% as 11.1:</i></span>
+                            
+                        </div>
+                      
+                        <!-- Number of Years DIV -->
+                        <div class="form-field form-label row">
+
+                            <label for="txtInterestRate" class="col-5">Number of Years:</label>
+
+                            <select id="listNumOfYears" name="myNumofYears" class="drop-down-menu col-7">
+
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                  
+                        <!-- Button DIV -->
+                        <div class="form-field form-label">
+
+                            <button type="submit" id="btnCalculate" class="btn btn-primary full-width">Calculate</button>
+
+                        </div>
+
                     </div>
-                </div>       
-            </div>
+                </div>   
+            </div>      
+         
                 <p>
                     <a href="../index.html" class="return-home">Return</a>
                 </p>
+
         </div>
     </div>
              
+    <!-- Results DIV -->
     <div class="assign-container">
         <div class="assign-content"> 
             <div class="card">
-                <div class="card-title">Search Results</div>
-                <div class="card-content" id="searchResults">
-                    <!-- Table -->
+                <div class="card-title">Calculation as of <span id="today"></span></div>
+                <div class="card-content assign-results-text " id="futureValue">
+                    <!-- Results -->
                 </div>
             </div>
         </div>
@@ -88,62 +147,74 @@
 setSelectedTheme();
 
 // Import classes.
-import { CalorieConverter } from "./calorie-converter.js";
+import { FinanceCalculator } from "./finance-calculator.js";
+import { Validator } from "./validator.js";
 
-// Create variable txtFoodItemEl and assign to txtFoodItem input field.
-let txtFoodItemEl = document.getElementById("txtFoodItem");
+// Set innerHTML of 'today' DIV to today's date [Ref B].
+document.getElementById("today").innerHTML = new Date().toLocaleDateString("en-US");
 
-// ON-CLICK EVENT START | This function activates when user clicks btnSearch.
-document.getElementById("btnSearch").onclick = function() {
+// ON-CLICK EVENT START | This function activates when user clicks 'btnCalculate'.
+document.getElementById("btnCalculate").onclick = function() {
 
-    // Assign field input value to variable txtFoodItem.
-    let txtFoodItem = txtFoodItemEl.value.toLowerCase();
+    // Assign field input values to variables.
+    let monthlyPayment= document.getElementById("txtMonthlyPayment").value;
+    let rate= document.getElementById("txtYearlyRate").value;
+    let years= document.getElementById("listNumOfYears").value;
+    let errorLogEl= document.getElementById("errorLog");
 
-    // Call static function from CalorieConverter class to variable foods. Use find function with input field value.
-    let foods = CalorieConverter.find(txtFoodItem.toLowerCase());
+    // Instantiate new Validator class with 'MonthlyPayment' and 'monthlyPayment' variable and assign to variable monthlyPaymentValidator.
+    let monthlyPaymentValidator = new Validator("Monthly Payment", monthlyPayment);
 
-    // Create table data with HTML table string.
-    let tableData = `
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Calories</th>
-            </tr>
-    `;
+    // Call imported functions [Ref C].
+    monthlyPaymentValidator.addRequiredField();
+    monthlyPaymentValidator.addRequiredFloatField();
+    monthlyPaymentValidator.addFloatMinField(100); // Sets field's minimum value to 100 [Ref D].
 
-        //For...of loop to iterate over foods variable to populate HTML table.
-    for (let food of foods) {
-        tableData += `
-            <tr>
-                <td>${food.name}</td>
-                <td>${food.calories}</td>
-            </tr>
-        `;
+    // Instantiate new Validator class with 'InterestRate' and 'rate' variable and assign to variable rateValidator.
+    let rateValidator = new Validator("Interest Rate", rate);
+
+    // Call imported functions.
+    rateValidator.addRequiredField();
+    rateValidator.addRequiredFloatField();
+    rateValidator.addFloatMaxField(100); // Sets field's maximum value to 100.
+
+    // Create variable with empty array.
+    let errorLog = [];
+
+    // This 'if' statement calls monthlyValidator.validate() function and if response is false, iterates over messages fields and pushes each message to errorLog variable [Ref E].
+    if (!monthlyPaymentValidator.validate()) {
+        for (let msg of monthlyPaymentValidator.messages) {
+            errorLog.push(msg);
+        }
     }
 
-    // Close opening table tag and bind results to searchResults DIV.
-    let closeTableTag = `</table>`;
-
-    document.getElementById("searchResults").innerHTML = tableData + closeTableTag;
-} // ON-CLICK EVENT END.
-
-// Register event listener for keyup.
-txtFoodItemEl.addEventListener('keyup', function (event) {
-    if (event.keyCode === 13) {
-        document.getElementById("btnSearch").click();
+    // This 'if' statement calls rateValidate.validate() function and if response is false, iterates over messages fields and pushes each message to errorLog variable [Ref E].
+    if (!rateValidator.validate()) {
+        for (let msg of rateValidator.messages) {
+            errorLog.push(msg);
+        }
     }
-});
 
-// Call static data field off of the CalorieConverter class with variable FoodList.
-let foodList = CalorieConverter.data;
+    // This 'if...else' statement [Ref F, G] see if monthlyPaymentValidator.validate() and rateValidator.validate() are true.
+    if (monthlyPaymentValidator.validate() && rateValidator.validate()) {
+       
+        // If true, do this...
+        errorLogEl.innerHTML = ""; // Clears innerHTML [Ref H].
 
-let foodListData = `<i>(Ex: `;
+        let futureValue = FinanceCalculator.calculateFutureValue(monthlyPayment, rate, years); // Calls static data fields off of FinanceCalculator.
 
-for (let food of foodList) {
-        foodListData += `${food.name}, `;
-}
-
-    document.getElementById("foodList").innerHTML = foodListData.slice(0, -2) + `)</i>`;
+        document.getElementById("futureValue").innerHTML = "The future value is " + FinanceCalculator.convertToCurrency(futureValue);
+    }
+        //If false, do this...
+        else {
+            errorLogEl.innerHTML = ""; // Clears innerHTML [Ref H].
+            let errorLogMessage = `<ul>`;
+            for (let msg of errorLog) {
+                errorLogMessage += `<li>${msg}</li>`;
+            }
+            document.getElementById("errorLog").innerHTML = errorLogMessage + `</ul>`;
+        }
+    };
 
        </script>
     </body>

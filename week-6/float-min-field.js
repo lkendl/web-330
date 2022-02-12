@@ -1,4 +1,4 @@
-/**
+/*
 ============================================
 ; Title: float-min-field.js
 ; Author: Professor Krasso 
@@ -13,16 +13,18 @@ export class FloatMinField {
     constructor(name, field, min) {
         this.name = name;
         this.field = field;
-        this.max = min;
+        this.min = min;
     }
 
 // This function will return true if it can ParseFloat this.field.
-    validate() {
-        let trueValue = isNaN(parseFloat(this.field > this.max));
+validate() {
+    if (parseFloat(this.field) > this.min) {
+        return true;
+    } 
+        return false;
     }
-
 // This function will return a string message..
     getMessage() {
-        return "${name} must be more than ${min}. You entered ${field}"; // <name> ?
+        return `${this.name} must be more than ${this.min}. You entered ${this.field}`;
     }
 }

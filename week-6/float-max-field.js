@@ -1,4 +1,4 @@
-/**
+/*
 ============================================
 ; Title: float-max-field.js
 ; Author: Professor Krasso 
@@ -18,11 +18,14 @@ export class FloatMaxField {
 
 // This function will return true if it can ParseFloat this.field.
     validate() {
-        let trueValue = isNaN(parseFloat(this.field < this.max));
+        if (parseFloat(this.field) < this.max) {
+            return true;
+        } 
+            return false;
     }
 
 // This function will return a string message..
     getMessage() {
-        return "${name} must be less than ${max}. You entered ${field}"; // <name> ?
+        return `${this.name} must be less than ${this.max}. You entered ${this.field}`;
     }
 }

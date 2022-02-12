@@ -1,4 +1,4 @@
-/**
+/*
 ============================================
 ; Title: finance-calculator.js
 ; Author: Professor Krasso 
@@ -17,10 +17,10 @@ export class FinanceCalculator {
 
     // A static function named calculateFutureValue with three parameters. 
     static calculateFutureValue(monthlyPayment, rate, years) { 
-        let month = years * MONTHS_IN_YEAR;
-        let interestRate = (1 + rate / 100);
+        let month = years * this.MONTHS_IN_YEAR;
+        let interestRate = 1 + rate / 100;
         let presentValue = monthlyPayment * month;
-        let futureValue = presentValue * (Math.pow(interest.Rate, months));    
+        let futureValue = presentValue * Math.pow(interestRate, month);    
         return futureValue.toFixed(2);       
     }
 
