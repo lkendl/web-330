@@ -1,0 +1,272 @@
+/*
+Light tan: #EBE4D4
+Tan: #C5B198
+Red: #D91A1A
+Blue: #253388
+
+*/
+
+body.test-theme {
+    --text-color: #000;
+    --background-color: rgb(138, 193, 232, 0.1);
+    --anchor-color: #8AC1E8;
+    --container-background-color: #FFF;
+
+    /* Content Blocks */
+    --content-1-background-color: #FFF;
+    --content-2-background-color: #253388;
+
+    --content-block-1-color: #000;
+    --content-block-1-border-color: #F7C4CE;
+    --content-title-1-color: #9EC172;
+
+    --content-block-2-color: #FFF;
+    --content-block-2-border-color: #FFF;
+    --content-title-2-color: #FFF;
+
+    --content-block-3-border-color: #FE0535;
+    --content-block-3-color: #253388;
+
+    /* Primary: #E49D3C (magenta)*/
+    --header-background-color: #000; /* Primary */
+    --header-color: #FFF;
+    --footer-background-color: #FE0535;
+    --footer-color: #FFF;
+
+    --heading-background-color: #FFF;
+    --heading-color: #FE0535;
+    --heading-border-color: #FFF;
+
+    --h1-background-color: #FFF;
+    --h1-border-color: #FFF;
+  
+    --btn-background-color: #FE0535;
+    --btn-color: #FFF;
+    --btn-hover-color: #FFF;
+    --btn-border-color: #FE0535;
+
+    --nav-background-color: #FFF;
+    --nav-link-color: #FE0535;
+
+    /* Warm: #EC008B (hot pink) */
+
+    /* Accent #1: #BF1F49 (orange) */
+    --anchor-hover-background-color: #253388;
+    --anchor-hover-color: #FFF;
+    --anchor-color-hover: #253388;
+    --btn-hover-background-color: #253388;
+
+    /* Accent #2: #4DB6AC (light blue) */
+     
+    --card-background-color: #FFF;
+    --card-title-color: #FFF;
+    --card-title-background-color: #253388;
+    --card-main-background-color: #ffffff;
+   
+    --input-border-color: #CCC;
+    --table-header-background-color: #EE4929;
+    --table-header-color: #FFF;
+    --table-border-color: #DDD;
+}
+
+body.maroon-theme {
+
+    --text-color: #591C27;
+    --background-color: #FFF;
+    --anchor-color: #591C27;
+
+
+    /* Primary: #E49D3C (maroon)*/
+    --header-background-color: #591C27; /* Primary */
+    --header-color: #FFF;
+    --footer-background-color: #591C27;
+    --footer-color: #FFF;
+
+    --heading-background-color: #591C27;
+    --heading-color: #FFF;
+    --heading-border-color: #591C27;
+
+    --h1-background-color: #591C27;
+    --h1-border-color: #591C27;
+  
+    --btn-background-color: #591C27;
+    --btn-color: #FFF;
+    --btn-hover-color: #FFF;
+    --btn-border-color: #591C27;
+
+    --nav-background-color: #FFF;
+    --nav-link-color: #591C27;
+
+    /* Warm: #D94B2B (orange) */
+
+    /* Accent #1: #BF1F49 (pink */
+    --anchor-hover-background-color: #BF1F49;
+    --anchor-hover-color: #FFF;
+    --anchor-color-hover: #BF1F49;
+    --btn-hover-background-color: #BF1F49;
+
+    /* Accent #2: #E49D3C */
+     
+    --card-background-color: #FFF;
+    --card-title-color: #D94B2B;
+   
+    --input-border-color: #CCC;
+    --table-header-background-color: #D94B2B;
+    --table-header-color: #FFF;
+    --table-border-color: #DDD;
+}
+
+body.soft-theme {
+    --text-color: #594E45; /* Warm */
+    --background-color: #FFF;
+
+    --anchor-color: #877D75;
+    --anchor-hover-color: #594E45;
+    --anchor-hover-background-color: #BFA08E; /* Accent */
+    --anchor-color-visited: #594E45;
+    --anchor-color-hover: #BFA08E;
+
+    --heading-background-color: #9EAAB0;
+    --heading-color: #594E45;
+    --heading-border-color: #9EAAB0;
+
+    --h1-background-color: #9EAAB0;
+    --h1-border-color: #BFA08E;
+  
+    --card-background-color: #FFF;
+    --card-title-color: #9EAAB0;
+
+    --btn-background-color: #9EAAB0;
+    --btn-color: #FFF;
+    --btn-hover-background-color: #BFA08E;
+    --btn-hover-color: #594E45;
+    --btn-border-color: #9EAAB0;
+
+    --input-border-color: #CCC;
+    --table-header-background-color: #594E45;
+    --table-header-color: #594E45;
+    --table-border-color: #DDD;
+   
+    --header-background-color: #9EAAB0; /* Primary */
+    --header-color: #594E45;
+    --footer-background-color: #9EAAB0;
+    --footer-color: #594E45;
+
+    --nav-background-color: #9EAAB0;
+
+}
+
+body.bright-theme {
+    --text-color: #000;
+    --background-color: #FFF;
+    --anchor-color: #FE0535;
+    --container-background-color: #FFF;
+
+    /* Primary: #E49D3C (magenta)*/
+    --header-background-color: #FE0535; /* Primary */
+    --header-color: #FFF;
+    --footer-background-color: #FE0535;
+    --footer-color: #FFF;
+
+    --heading-background-color: #FFF;
+    --heading-color: #FE0535;
+    --heading-border-color: #FFF;
+
+    --h1-background-color: #FFF;
+    --h1-border-color: #FFF;
+  
+    --btn-background-color: #FE0535;
+    --btn-color: #FFF;
+    --btn-hover-color: #FFF;
+    --btn-border-color: #FE0535;
+
+    --nav-background-color: #FFF;
+    --nav-link-color: #FE0535;
+    --nav-link-color-1: #FE0535;
+    --nav-link-color-2: #FE0535;
+    --nav-link-color-3: #FE0535;
+    --nav-link-color-4: #FE0535;
+
+    /* Warm: #EC008B (hot pink) */
+
+    /* Accent #1: #BF1F49 (orange) */
+    --anchor-hover-background-color: #EE4929;
+    --anchor-hover-color: #FFF;
+    --anchor-color-hover: #EE4929;
+    --btn-hover-background-color: #EE4929;
+
+    /* Accent #2: #4DB6AC (light blue) */
+     
+    --card-background-color: #FFF;
+    --card-title-color: #FFF;
+    --card-title-background-color: #EE4929;
+    --card-main-background-color: #ffffff;
+   
+    --input-border-color: #CCC;
+    --table-header-background-color: #EE4929;
+    --table-header-color: #FFF;
+    --table-border-color: #DDD;
+}
+
+body.soft-color-theme {
+    --text-color: #000;
+    --background-color: #FFF;
+    --container-background-color: #FFF;
+    --anchor-color: #000;
+
+/* Accent #1: #BF1F49 (orange) */
+    --anchor-hover-background-color: #EE4929;
+    --anchor-hover-color: #FFF;
+    --anchor-color-hover: #EE4929;
+    --btn-hover-background-color: #EE4929;
+
+/* Primary: #E49D3C (magenta)*/
+    --header-background-color: #8DA6F2; /* Primary */
+    --header-color: #000;
+    --footer-background-color: #8DA6F2;
+    --footer-color: #000;
+
+    --heading-background-color: #8DA6F2;
+    --heading-color: #000;
+    --heading-border-color: #8DA6F2;
+
+    --h1-background-color: #8DA6F2;
+    --h1-border-color: #8DA6F2;
+  
+    --btn-background-color: #8DA6F2;
+    --btn-color: #FFF;
+    --btn-hover-color: #FFF;
+    --btn-border-color: #8DA6F2;
+
+    --nav-background-color: #FFF;
+    --nav-link-color: #8DA6F2;
+    --nav-link-color-1: #8DA6F2;
+    --nav-link-background-color-1: #8DA6F2;
+    --nav-link-color-2: #FD4925;
+    --nav-link-background-color-2: #FD4925;
+    --nav-link-color-3: #FF8E6C;
+    --nav-link-background-color-3: #FF8E6C;
+    --nav-link-color-4: #FF91FE;
+    --nav-link-background-color-4: #FF91FE;
+    --nav-link-color-hover: #FFF;
+    
+
+    /* Warm: #EC008B (hot pink) */
+
+    /* Accent #1: #BF1F49 (orange) */
+    --anchor-hover-background-color: #EE4929;
+    --anchor-hover-color: #FFF;
+    --anchor-color-hover: #EE4929;
+    --btn-hover-background-color: #EE4929;
+
+    /* Accent #2: #4DB6AC (light blue) */
+     
+    --card-background-color: #FFF;
+    --card-title-color: #4DB6AC;
+    --card-title-background-color: #4DB6AC;
+   
+    --input-border-color: #CCC;
+    --table-header-background-color: #4DB6AC;
+    --table-header-color: #FFF;
+    --table-border-color: #DDD;
+}
