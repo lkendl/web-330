@@ -12,7 +12,7 @@
 */
 body.default-theme {
     --text-color: #000;
-    --background-color: rgb(235, 228, 212, 0.6);
+    --background-color: rgba(235, 228, 212, 0.6);
     --anchor-color: #FE0535;
     --container-background-color: #FFF;
 
@@ -31,7 +31,7 @@ body.default-theme {
     --content-block-3-border-color: #FE0535;
     --content-block-3-color: #253388;
 
-    /* Primary: #E49D3C (magenta)*/
+    /* Primary: */
     --header-background-color: #000; /* Primary */
     --header-color: #FFF;
     --footer-background-color: #FE0535;
@@ -54,15 +54,15 @@ body.default-theme {
     --nav-background-color: #FFF;
     --nav-link-color: #FE0535;
 
-    /* Warm: #EC008B (hot pink) */
+    /* Warm */
 
-    /* Accent #1: #BF1F49 (orange) */
+    /* Accent #1 */
     --anchor-hover-background-color: #253388;
     --anchor-hover-color: #FFF;
     --anchor-color-hover: #253388;
     --btn-hover-background-color: #253388;
 
-    /* Accent #2: #4DB6AC (light blue) */
+    /* Accent #2 */
      
     --card-background-color: #FFF;
     --card-title-color: #FFF;
