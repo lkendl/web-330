@@ -43,6 +43,8 @@ body.default-theme {
 
     --h1-background-color: #FFF;
     --h1-border-color: #FFF;
+
+    --h3-color: #FE0535;
   
     --btn-background-color: #FE0535;
     --btn-color: #FFF;
@@ -55,7 +57,7 @@ body.default-theme {
     /* Warm: #EC008B (hot pink) */
 
     /* Accent #1: #BF1F49 (orange) */
-    --anchor-hover-background-color: #253388;
+    --anchor-hover-background-color: 253388#253388;
     --anchor-hover-color: #FFF;
     --anchor-color-hover: #253388;
     --btn-hover-background-color: #253388;
@@ -68,7 +70,7 @@ body.default-theme {
     --card-main-background-color: #ffffff;
    
     --input-border-color: #CCC;
-    --table-header-background-color: #EE4929;
+    --table-header-background-color: #ee4929;
     --table-header-color: #FFF;
     --table-border-color: #DDD;
 }
@@ -77,6 +79,11 @@ body {
     font-family: 'Raleway', Verdana, Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
+    background: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)), url("../img/mountain-back.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .main {
@@ -222,8 +229,12 @@ h1 {
     border: solid 1px var(--h1-border-color);
 }
 
-h2, h3, h4 {
+h2, h4 {
     color: var(--heading-color);
+}
+
+h3 {
+    color: var(--h3-color);    
 }
 
 h5 {

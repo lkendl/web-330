@@ -1,15 +1,15 @@
 /*
-Light tan: #EBE4D4
-Tan: #C5B198
-Red: #D91A1A
-Blue: #253388
-
+============================================
+; Title: theme-library.css
+; Author: Laura Kendl
+; Date: 14 February 2022
+; Description: Theme Library
+;===========================================
 */
-
 body.test-theme {
     --text-color: #000;
-    --background-color: rgb(138, 193, 232, 0.1);
-    --anchor-color: #8AC1E8;
+    --background-color: rgb(235, 228, 212, 0.6);
+    --anchor-color: #FE0535;
     --container-background-color: #FFF;
 
     /* Content Blocks */
@@ -17,8 +17,8 @@ body.test-theme {
     --content-2-background-color: #253388;
 
     --content-block-1-color: #000;
-    --content-block-1-border-color: #F7C4CE;
-    --content-title-1-color: #9EC172;
+    --content-block-1-border-color: #253388;
+    --content-title-1-color: #FE0535;
 
     --content-block-2-color: #FFF;
     --content-block-2-border-color: #FFF;
