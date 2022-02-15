@@ -57,7 +57,7 @@ body.default-theme {
     /* Warm: #EC008B (hot pink) */
 
     /* Accent #1: #BF1F49 (orange) */
-    --anchor-hover-background-color: 253388#253388;
+    --anchor-hover-background-color: #253388;
     --anchor-hover-color: #FFF;
     --anchor-color-hover: #253388;
     --btn-hover-background-color: #253388;
