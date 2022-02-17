@@ -1,4 +1,4 @@
-/*
+/**
 ============================================
 ; Title: theme.css
 ; Author: Professor Krasso 
@@ -7,9 +7,20 @@
 ; Description: Demonstrates how to create CSS variables for  website themes.
 ; Resources:
 ; Blackboard: Initial code provided by Professor Krasso in WEB330.
-; W3Schools: https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu (Html Lists Menu)
-;===========================================
+; W3schools: https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu (Html Lists Menu)
+; W3schools: https://www.w3schools.com/cssref/css3_pr_mediaquery.asp (CSS @media Rule)
+===========================================
 */
+
+/** Note:
+Common breakpoints are: 
+320px — 480px for mobile devices 
+481px — 768px for iPads & tablets
+769px — 1024px for small screens like laptop
+1025px — 1200px for large screens like Desktops
+1201px and above for extra large screens like TV
+*/
+
 body.default-theme {
     --text-color: #000;
     --background-color: rgba(235, 228, 212, 0.6);
@@ -88,7 +99,14 @@ body {
 
 .main {
     margin-top: 175px;
-    margin-bottom: 150px;
+    min-height: 100vh;
+    margin-bottom: 6rem;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .main {
+      padding: 25px;
+    }
 }
 
 #img-about-container {
@@ -369,6 +387,15 @@ footer {
     padding-top: 10px;
 }
 
+@media (max-width: 600px) {
+    footer {
+        position: relative;
+        margin-top: -4rem;
+        width: 100%;
+        height: 4rem;
+    }
+}
+
 .footer-link {
     font-family: 'Roboto',  Verdana, Arial, sans-serif;
     font-size: .70em;
@@ -378,7 +405,6 @@ footer {
     margin-right: auto;
     margin-left: auto;
     color: var(--footer-color);
-    text-align: center;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
