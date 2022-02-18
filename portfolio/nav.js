@@ -7,8 +7,6 @@
 ; Modified By: Laura Kendl
 ; Description: Demonstrates how to build and end-to-end functional
 ; prototype of my personal portfolio project.
-; Resources:
-; Blackboard: Code provided by Professor Krasso in WEB330 Assignment 5.3 Outline
 ===========================================
 */
 
