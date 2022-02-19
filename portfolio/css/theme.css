@@ -90,7 +90,7 @@ body {
     font-family: 'Raleway', Verdana, Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
-    background: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)), url("../img/mountain-back.jpg") no-repeat center center fixed;
+    background: linear-gradient(rgba(255, 255, 255, .9), 50%, rgba(255, 255, 255, .9)), url("../img/mountain-back.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -98,12 +98,12 @@ body {
 }
 
 .main {
-    margin-top: 175px;
+    margin-top: 120px;
     min-height: 100vh;
     margin-bottom: 6rem;
 }
 
-@media (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 600px) {
     .main {
       padding: 25px;
     }
@@ -168,6 +168,7 @@ body {
 
 .content-block-1 {
     padding: 20px;
+    min-height: 270px;
     border: 5px double var(--content-block-1-border-color);
     color: var(--content-block-1-color);
 }
@@ -215,7 +216,7 @@ a:hover {
     background-color: rgba(255,255,255, 1);
     width: 100%;
     display: flex;
-    margin-top: -175px;
+    margin-top: -120px;
     margin-left: -10px;
     position: fixed;
     padding-top: 50px;
