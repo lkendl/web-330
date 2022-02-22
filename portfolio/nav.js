@@ -40,9 +40,6 @@ class Nav extends HTMLElement {
             <li class="nav-item">
                 <a class="nav-link" href="api-unit-tests.html">API Unit Tests</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="bucket-list.html">Bucket List</a>
-            </li>
         </ul>
     </nav>
                   
