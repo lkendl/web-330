@@ -1,0 +1,250 @@
+<!--
+============================================
+; Title: Assignment 8.2
+; File Name: Kendl-whatabook2.html
+; Author: Professor Krasso 
+; Date: 25 February 2022
+; Modified By: Laura Kendl
+; Description: This application demonstrates how to
+; read and display XML data files with the WhatABook, Part 2 app.
+; Resources: 
+; [Ref A] MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects (Working with Objects)
+; [Ref B] O'reilly: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s13.html (4.13. Validate ISBNs)
+;===========================================
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>WEB 330 - Enterprise JavaScript II</title>
+
+        <!-- Link to External Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="../theme.css">
+        <link rel="stylesheet" type="text/css" href="../site.css">
+
+        <!-- Assignment-Specific External Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="../flex-layout.css">
+        <link rel="stylesheet" type="text/css" href="./Kendl-whatabook2.css">
+
+        <!-- Link to External JS Sources -->
+        <script src="../theme.js"></script>
+
+        <!-- Link to External Font Sources -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    </head>
+
+<body class="light-theme">
+    <div class="assign-container">
+        <h1 class="app-header">Welcome the WhatABook, Part 2 App!</h1>    
+        <div class="assign-content">
+
+            <div class="card">          
+            <div class="card-title">Book Listing</div>
+                <div class="card-content" id="bookListing">
+
+                    <!-- Populate books table here. -->
+                      
+                </div>  
+            </div>      
+         
+                <p>
+                    <a href="../index.html" class="return-home">Return</a>
+                </p>
+
+        </div>
+    </div>
+             
+    <!-- Results DIV -->
+    <div class="assign-container">
+        <div class="assign-content"> 
+            <div class="card">
+                <div class="card-title">Selected Book</div>
+                <div class="card-content" id="selectedBook">
+                    <!-- Populate selectedBook here. -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<!-- Internal JS -->
+
+<script type="module">
+
+// Set user-selected theme.
+setSelectedTheme();
+
+// Import HttpClient class.
+import { HttpClient } from "./http-client.js";
+
+// Instantiate a new HttpClient object and assign it 'http' variable.
+let http = new HttpClient();
+
+// Create a new variable 'isbns' and assign array of ISBN numbers.
+let isbns = [
+    '0345339681',
+    '0261103571',
+    '9780593099322',
+    '9780261102361',
+    '9780261102378',
+    '9780590302715',
+    '9780316769532',
+    '9780743273565',
+    '9780590405959'
+]
+
+// Define 'params' object literal. 
+const params = { // Note: This object literal is written as an "object initializer" [Ref A]. 
+    "bibkeys": `ISBN:${isbns.join(",")}`,
+    "format": "json",
+    "jscmd": "details"
+};
+
+// Call http.get function and supply with open library URL and params objects.
+http.get("https://openlibrary.org/api/books", params).then(res => {
+   
+    // Call buildHTMLString() function, supplying it with res object and string value "table" to bind results to bookList DIV.
+    document.getElementById("bookListing").innerHTML = buildHtmlString(res, "table");
+  
+    addIsbnClickEvents();
+})
+
+// Add catch statement to write an error to console in case of error.
+.catch(e => {
+    console.log(e);
+})
+
+
+// FUNCTION START: getBook() //
+// Create function to retrieve book information.
+function getBook(e) {
+    e.preventDefault();
+    // Create variable named 'self' with a value of 'this'.
+    let self = this;
+    // Create variable named 'isbn' with value of the innerText of self variable.
+    let isbn = self.innerText;
+
+    // // Build new 'params' object.
+    // let paramsObject = {}; // Note: {} creates an empty object.
+    // paramsObject [isbn] = book[isbn];
+
+    // Build new 'params' object.
+    const params =
+        {
+            "bibkeys": `ISBN:${isbn}`,
+            "format": "json",
+            "jscmd": "details"
+        };
+
+    // Call http.get function with open library URL and 'params' object literal and "ul" string value.
+    http.get("https://openlibrary.org/api/books", params).then(res => {
+        
+        document.getElementById("selectedBook").innerHTML = buildHtmlString(res, "ul");
+    })
+
+    // Add catch statement to write an error to console in case of error.
+    .catch(e => {
+        console.log(e);
+    })
+}
+// FUNCTION END: getBook() //
+
+
+// FUNCTION START: buildHtmlString() //
+// Build HTML table.
+function buildHtmlString(res, format) {
+   
+    // Create tableString variable.
+    let tableString = `
+    <table id="bookTable" class="table">
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Pages</th>
+            <th>Authors</th>
+        </tr>  
+        `;
+
+        // Create ulString variable with empty string.
+        let ulString = "";
+
+        // This 'for...in' statement iterates over the res variable and appends each object to the ulString and tableString variables.
+        for (let key in res) {
+
+            ulString += "<ul>";
+
+            if (res.hasOwnProperty(key)) {
+
+                // Create the authors array.
+                let authors = [];
+
+                if (res[key].details.authors) {
+                    authors = res[key].details.authors.map(function(author) {
+                        return author.name;
+                    })
+                }
+           
+                // Define the book variable.
+                let book = {
+                    isbn: res[key].details.isbn_13 ? res[key].details.isbn_13 : res[key].details.isbn_10, // Note: ISBN formats are either "ISBN-13" or "ISBN-10" (older format) [Ref B].
+                    title: res[key].details.title,
+                    description: res[key].details.subtitle ? res[key].details.subtitle : "N/A",
+                    pages: res[key].details.number_of_pages ? res[key].details.number_of_pages : "N/A",
+                    authors: authors.join(", ")
+                }
+
+                ulString += `
+                <li><b>ISBN:</b> ${book.isbn}</li>
+                <li><b>Title:</b> ${book.title}</li>
+                <li><b>Description:</b> ${book.description}</li>
+                <li><b>Pages:</b> ${book.pages}</li>
+                <li><b>Authors:</b> ${book.authors}</li> 
+                `;
+
+                tableString += `
+                <tr>
+                    <td><a href="#" class="isbn-link">${book.isbn}</a></td>
+                    <td>${book.title}</td>
+                    <td>${book.description}</td>
+                    <td>${book.pages}</td>
+                    <td>${book.authors}</td>
+                </tr>
+                `;
+            }
+        }
+
+        // Close HTML table string.
+        ulString += "</ul>";
+        tableString += "</table>";
+
+        // Format check.
+        if (format === "table") {
+            return tableString;
+        } else {
+            return ulString;
+        }
+}
+// FUNCTION END: buildHtmlString() //
+
+// FUNCTION START: addIsbnClickEvents() //
+function addIsbnClickEvents() {
+    let viewButtons = document.querySelectorAll("#bookTable tbody .isbn-link");
+
+    // Create a standard 'for' loop with event listeners for "click" with the anchorClicked() function.
+    for (let index= 0; index < viewButtons.length; index++) {
+        let viewButton = viewButtons[index];
+        viewButtons[index].addEventListener("click", getBook);
+    }
+} // FUNCTION END: addIsbnClickEvents() //
+
+       </script>
+    </body>
+</html>
