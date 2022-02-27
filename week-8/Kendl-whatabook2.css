@@ -6,7 +6,6 @@
 ; Date: 25 February 2022
 ; Modified By: Laura Kendl
 ; Description: CSS for Assignment 8.2 - WhatABook, Part 2.
-; Resources:
 ;===========================================
 */
 
@@ -14,4 +13,10 @@ ul {
     list-style-type: none;
 }
 
+th {
+    padding: 5px;
+}
 
+td {
+    padding: 5px;
+}
