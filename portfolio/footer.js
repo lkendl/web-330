@@ -19,9 +19,10 @@ class Footer extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
+        <div id="footer">
         <footer>
 
-            <div>
+            <div class="footer-link-wrapper">
     
                 <a href="https://github.com/lkendl?tab=repositories" target="_blank" class="footer-link">Laura's GitHub</a> 
                 |
@@ -33,8 +34,9 @@ class Footer extends HTMLElement {
     
             </div>
     
-        <div id="copyright"><br />&copy; 2022 Kendl </div>
+            <div id="copyright"><br />&copy; 2022 Kendl </div>
     
+        </div>
         </footer>
     </body>
 </html>

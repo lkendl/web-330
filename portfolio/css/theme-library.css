@@ -6,61 +6,135 @@
 ; Description: Holds various themes for future use.
 ;===========================================
 */
+
 body.test-theme {
     --text-color: #000;
-    --background-color: rgb(235, 228, 212, 0.6);
-    --anchor-color: #FE0535;
+    --background-color: rgba(235, 228, 212, 0.6);
+    --anchor-color: #8DA6F2;
     --container-background-color: #FFF;
 
     /* Content Blocks */
     --content-1-background-color: #FFF;
-    --content-2-background-color: #253388;
+    --content-2-background-color: #8DA6F2;
 
     --content-block-1-color: #000;
-    --content-block-1-border-color: #253388;
-    --content-title-1-color: #FE0535;
+    --content-block-1-border-color: #8DA6F2;
+    --content-title-1-color: #8DA6F2;
 
     --content-block-2-color: #FFF;
     --content-block-2-border-color: #FFF;
     --content-title-2-color: #FFF;
 
-    --content-block-3-border-color: #FE0535;
-    --content-block-3-color: #253388;
+    --content-block-3-border-color: #243773;
+    --content-block-3-color: #8DA6F2;
+
+    /* Primary: */
+    --header-background-color: #000; /* Primary */
+    --header-color: #FFF;
+    --footer-background-color: #8DA6F23;
+    --footer-color: #FFF;
+
+    --heading-background-color: #FFF;
+    --heading-color: #243773;
+    --heading-border-color: #FFF;
+
+    --h1-background-color: #FFF;
+    --h1-border-color: #FFF;
+
+    --h3-color: #243773;
+  
+    --btn-background-color: #243773;
+    --btn-color: #FFF;
+    --btn-hover-color: #FFF;
+    --btn-border-color: #243773;
+
+    --nav-background-color: #FFF;
+    --nav-link-color: #243773;
+    --logo-txt-color: #243773;
+    --logo-txt-background-color-1: #C9E2F2;
+    --logo-txt-background-color-2: #E9831E;
+    --logo-txt-background-color-3: #FCDD1D;
+
+    /* Warm */
+
+    /* Accent #1 */
+    --anchor-hover-background-color: #8DA6F2;
+    --anchor-hover-color: #FFF;
+    --anchor-color-hover: #8DA6F2;
+    --btn-hover-background-color: #8DA6F2;
+
+    /* Accent #2 */
+     
+    --card-background-color: #FFF;
+    --card-title-color: #FFF;
+    --card-title-background-color: #8DA6F2;
+    --card-main-background-color: #ffffff;
+   
+    --input-border-color: #CCC;
+    --table-header-background-color: #8DA6F2;
+    --table-header-color: #FFF;
+    --table-border-color: #DDD;
+}
+
+body.bill-theme {
+    --text-color: #000;
+    --background-color: rgb(235, 228, 212, 0.6);
+    --anchor-color: #FF91FE;
+    --container-background-color: #FFF;
+
+    /* Content Blocks */
+    --content-1-background-color: #FFF;
+    --content-2-background-color: #DCE0F2;
+
+    --content-block-1-color: #000;
+    --content-block-1-border-color: #DCE0F2;
+    --content-title-1-color: #FF91FE;
+
+    --content-block-2-color: #000;
+    --content-block-2-border-color: #FFF;
+    --content-title-2-color: #000;
+    --content-title-2-background-color: #FF91FE;
+
+    --content-block-3-border-color: #FF91FE;
+    --content-block-3-color: #DCE0F2;
 
     /* Primary: #E49D3C (magenta)*/
     --header-background-color: #000; /* Primary */
     --header-color: #FFF;
-    --footer-background-color: #FE0535;
+    --footer-background-color: #FF91FE;
     --footer-color: #FFF;
 
     --heading-background-color: #FFF;
-    --heading-color: #FE0535;
+    --heading-color: #FF91FE;
     --heading-border-color: #FFF;
 
     --h1-background-color: #FFF;
     --h1-border-color: #FFF;
   
-    --btn-background-color: #FE0535;
+    --btn-background-color: #FF91FE;
     --btn-color: #FFF;
     --btn-hover-color: #FFF;
-    --btn-border-color: #FE0535;
+    --btn-border-color: #FF91FE;
 
     --nav-background-color: #FFF;
-    --nav-link-color: #FE0535;
+    --nav-link-color: #FF91FE;
+    --logo-txt-color: #000;
+    --logo-txt-background-color-1: #DCE0F2;
+    --logo-txt-background-color-2: #FF91FE;
 
     /* Warm: #EC008B (hot pink) */
 
     /* Accent #1: #BF1F49 (orange) */
-    --anchor-hover-background-color: #253388;
+    --anchor-hover-background-color: #DCE0F2;
     --anchor-hover-color: #FFF;
-    --anchor-color-hover: #253388;
-    --btn-hover-background-color: #253388;
+    --anchor-color-hover: #DCE0F2;
+    --btn-hover-background-color: #DCE0F2;
 
     /* Accent #2: #4DB6AC (light blue) */
      
     --card-background-color: #FFF;
     --card-title-color: #FFF;
-    --card-title-background-color: #253388;
+    --card-title-background-color: #DCE0F2;
     --card-main-background-color: #ffffff;
    
     --input-border-color: #CCC;
@@ -161,6 +235,21 @@ body.bright-theme {
     --background-color: #FFF;
     --anchor-color: #FE0535;
     --container-background-color: #FFF;
+
+     /* Content Blocks */
+     --content-1-background-color: #FFF;
+     --content-2-background-color: #EE4929;
+ 
+     --content-block-1-color: #000;
+     --content-block-1-border-color: #EE4929;
+     --content-title-1-color: #FE0535;
+ 
+     --content-block-2-color: #FFF;
+     --content-block-2-border-color: #FFF;
+     --content-title-2-color: #FFF;
+ 
+     --content-block-3-border-color: #FE0535;
+     --content-block-3-color: #EE4929;
 
     /* Primary: #E49D3C (magenta)*/
     --header-background-color: #FE0535; /* Primary */
