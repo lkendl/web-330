@@ -54,7 +54,7 @@ body.default-theme {
     --btn-border-color: #FE0535;
 
     --nav-background-color: #FFF;
-    --nav-link-color: #FE0535;
+    --nav-link-color: #fe0535;
     --logo-txt-color: #FFF;
     --logo-txt-background-color-1: #2B2C30;
     --logo-txt-background-color-2: #BDCFD7;
@@ -85,7 +85,7 @@ body {
     font-family: 'Raleway', Verdana, Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
-    background: linear-gradient(to bottom, rgb(189, 207, 215, .5) 10%, rgba(255, 255, 255, .2) 100%), url("../img/mountain-back.jpg") no-repeat center center fixed;
+    background: linear-gradient(to bottom, rgb(255, 255, 255, 0.8) 5%, rgba(255, 255, 255, .2) 100%), url("../img/mountain-back.jpg") no-repeat center center fixed;
     /* background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%); */
     -webkit-background-size: cover;
     -moz-background-size: cover;
