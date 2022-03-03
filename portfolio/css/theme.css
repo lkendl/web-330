@@ -85,7 +85,7 @@ body {
     font-family: 'Raleway', Verdana, Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, .2) 100%), url("../img/mountain-back.jpg") no-repeat center center fixed;
+    background: linear-gradient(to bottom, rgb(189, 207, 215, .5) 10%, rgba(255, 255, 255, .2) 100%), url("../img/mountain-back.jpg") no-repeat center center fixed;
     /* background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%); */
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -479,12 +479,18 @@ footer {
 
 /** Page Specific Styling: Index */
 #txtWelcome {
-    font-family: 'Handlee',  Verdana, Arial, sans-serif;
-    font-size: 1.3em;
+    font-family: 'Raleway',  Verdana, Arial, sans-serif;
+    font-size: 1.5em;
     font-weight: 400;
-    font-style: italic;
     letter-spacing: -1px;
     margin-top: -20px;
+}
+
+.status {
+    color: var(--h3-color); 
+    font-size: 14px;   
+    margin-top: -13px;
+    margin-left: -13px;
 }
 
 /** Page Specific Styling: Resume */
